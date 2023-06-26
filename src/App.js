@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+// import Searchbar from './component/Searchbar'
+import ShowImage from './component/ShowImage'
+import Searchbar from './component/Searchbar'
 
 function App() {
+  let [images , setImages] = useState([]);
+  console.log(images)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Searchbar  addImages={setImages}/>
+      <ShowImage images = {images} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+// ZffbKhFtggUr-eoUjSGnoBUDJWkSyuJsRNgu9kMkwxY
+// https://api.unsplash.com/
+// client_id=YOUR_ACCESS_KEY
+// GET /search/photos
